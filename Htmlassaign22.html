@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="https://en.wikipedia.org/wiki/" />
+    <title>Cloud Eminent Assaignment-2.2 Form</title>
+  </head>
+  <body style="background-color: bisque">
+    <h2 style="color: saddlebrown; text-align: center">User Info Form</h2>
+    <fieldset>
+    <form action="/Submit-form"  method="post" target="_self">
+      <label for="FullName">FullName</label>
+      <input
+        type="text"
+        id="FullName"
+        name="FullName"
+        placeholder="Enter Your Full Name"
+        required
+        maxlength="45" 
+        autocomplete="off"
+      /><br />
+      <label for="Age">Age</label>
+      <input
+        type="number"
+        id="Age"
+        name="age"
+        min="0"
+        max="120"
+        step="1"
+        required
+      /><br />
+      <fieldset>
+        <legend>Gender</legend>
+        <div>
+          <label for="Male">Male</label>
+          <input
+            type="radio"
+            name="Male"
+            id="Male"
+            onclick="toggleother(false)"
+          />
+        </div>
+        <div>
+          <label for="Female">Female</label>
+          <input type="radio" name=Female" id="Female "
+          onclick="toggleother(false)" />
+        </div>
+        <div>
+          <label for="Other">Other</label>
+          <input type="radio" name="Other" id="Other" />
+        </div>
+      </fieldset>
+      <label>Selct your Hobbies:</label>
+      <label for="Reading">Reading</label>
+      <input type="checkbox" id="Reading" name="hobbies" value="Reading" />
+      <label for="music">Music</label>
+      <input type="checkbox" id="music" name="hobbies" value="music" />
+      <label type="Games">Games</label>
+      <input type="checkbox" id="Games" name="hobbies" value="Game" />
+      <label for="Movies">Movies</label>
+      <input type="checkbox" id="Movies" name="hobbies" value="Movies" /><br />
+      <label for="country">Country</label>
+      <select id="country" name="country" required>
+        <option value="" disabled selected>Select your Country</option>
+        <option value="Bharat(INDIA)">Bharat(INDIA)</option>
+        <option value="USA">USA</option>
+        <option value="Russia">Russia</option>
+        <option value="U.K.">U.K.</option></select
+      ><br />
+      <label for="cmnts">Short Bio</label><br>
+      <textarea
+        id="cmnts"
+        name="cmnts"
+        rows="5"
+        cols="15"
+        maxlength="500"
+        placeholder="Enter a short bio"
+      ></textarea
+      ><br />
+      <label for="EmailAddress">Email Address</label>
+      <input
+        type="email"
+        name="EmailAddress"
+        id="EmailAddress"
+        required
+        placeholder="EmailAddress"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        autocomplete="off"
+      />
+      <br />
+      <label for="Pass">Password</label>
+      <input
+        type="password"
+        name="pass"
+        id="pass"
+        required
+        placeholder="Password"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{6,8}"
+        min="6"
+        max="8"
+        title="Password must contain one uppercase , one lowercase and one special charcter"
+      />
+      <br />
+      <label for="DOB">Date of Birth</label>
+      <input type="date" name="DOB" id="DOB" min="01-01-1930" max="31-12-2080" required /><br />
+      <button>Submmit Button</button>
+      </fieldset>
+    </form>
+  </body>
+</html>
