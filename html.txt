@@ -42,6 +42,7 @@
                  <select id="nav-search-select">
                   <option selected value="cse">CSE</options>
                   <option value="ECE">ECE</options>
+                  <option value="CSE">CSE</options>
 
                 </select>
                </div>
