@@ -27,7 +27,7 @@
   max-width: 250%;
   font-size: 1rem;
   display: inline-block;
-  border: 3px;
+  border: 3px solid green;
 }
 .profile-pic {
   min-height: 150px;
