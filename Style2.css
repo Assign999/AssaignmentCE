@@ -1,0 +1,47 @@
+.bb {
+  padding: 4em;
+  margin: 7%;
+  border: 2px solid blue;
+  background-color: bisque;
+  font-size: 2em;
+}
+.main-content {
+  padding: 0.1rem;
+  margin: 5%;
+  border: 2px;
+}
+* {
+  box-sizing: border-box;
+}
+.sidebar {
+  width: 2rem;
+  position: sticky;
+}
+.main-content {
+  width: 65%;
+  overflow: auto;
+  padding: 0.1rem;
+}
+.card {
+  width: 100%;
+  max-width: 250%;
+  font-size: 1rem;
+  display: inline-block;
+  border: 3px solid green;
+}
+.profile-pic {
+  min-height: 150px;
+  max-width: 150px;
+  float: inline-end;
+  border: 1em;
+}
+h1,
+h2 {
+  position: relative;
+}
+.notification-badge {
+  position: absolute;
+}
+.sidebar a:focus {
+  outline: 2px solid orange;
+}
