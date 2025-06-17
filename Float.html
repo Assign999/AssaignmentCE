@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="charset" content="width: device-width, initial-scale=1.0" />
+    <title>Float Madness</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 0;
+      margin: 0;
+      background-color: blanchedalmond;
+    }
+    .container {
+      width: 100%;
+    }
+    .card {
+      float: left;
+      width: 30%;
+      margin: 1.5%;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      text-align: center;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .price {
+      font-size: 24px;
+      margin: 15px 0;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li::before {
+      content: "✔ ";
+      color: green;
+    }
+    button {
+      padding: 10px 20px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+  </style>
+  <body>
+    <h1 style="text-align: center">flex-pricing (float)</h1>
+    <div class="Container">
+      <div class="card">
+        <h2>Basic</h2>
+
+        <div class="price">$9</div>
+        <ul>
+          <li>Feature A</li>
+          <li>Feature B</li>
+          <li>Feature C</li>
+        </ul>
+        <button>Subscribe</button>
+      </div>
+      <div class="card pro">
+        <h2>Pro</h2>
+        <div class="Price">$29</div>
+        <ul>
+          <li>Basic feature</li>
+          <li>System Service</li>
+          <li>Settings</li>
+        </ul>
+        <button>Subscribe</button>
+      </div>
+      <div class="card">
+        <h2>Enterprise</h2>
+        <div class="price">$99</div>
+        <ul>
+          <li>Advance Features</li>
+          <li>Manager Service</li>
+          <li>Advance Settings</li>
+        </ul>
+        <button>Subscribe</button>
+      </div>
+    </div>
+  </body>
+</html>
