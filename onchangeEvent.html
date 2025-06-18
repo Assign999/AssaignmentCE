@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Practice</title>
+  </head>
+  <body>
+    <h2>Select a Fruit</h2>
+    <select id="fruit" onchange="showSelectedfruit()">
+      <option value="">-- Select --</option>
+      <option value="apple">Apple</option>
+      <option value="banana">Banana</option>
+      <option value="mango">Mango</option>
+    </select>
+    <br /><br />
+    <script>
+      function showSelectedfruit() {
+        const fruit = document.getElementById("fruit").value;
+        if (fruit) {
+          alert("you selected: " + fruit);
+        }
+      }
+    </script>
+    <button>Click Me</button>
+  </body>
+</html>
