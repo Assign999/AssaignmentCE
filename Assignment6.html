@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CloudEminent5</title>
+    <style>
+      body {
+        background-color: #fff8e1;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        border: 3px solid black;
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      h1 {
+        text-align: center;
+        text-shadow: 3px 3px greenyellow;
+        margin-top: 20px;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .profile-img img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+      }
+
+      .intro-text {
+        flex: 1;
+        min-width: 250px;
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-sizing: border-box;
+      }
+      .profile-img {
+        flex: 0 0 250px;
+        max-width: 250px;
+      }
+
+      aside,
+      .Projects,
+      .contract {
+        padding: 40px;
+      }
+
+      .Skills ul {
+        padding-left: 20px;
+        list-style: square;
+      }
+
+      .Projects p,
+      .contract ol {
+        line-height: 1.6;
+      }
+
+      /* max-width: 480px */
+      @media (max-width: 480px) {
+        body {
+          font-size: 120%;
+        }
+        .container,
+        aside,
+        .Projects,
+        .contract {
+          width: 100%;
+          display: block;
+        }
+        .container {
+          flex-direction: column;
+          text-align: center;
+        }
+        .profile-img {
+          margin: 0 auto;
+        }
+      }
+
+      /* max-width: 768px */
+      @media (max-width: 768px) {
+        .container {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+        h2 {
+          font-size: 1.3em;
+        }
+        .contract {
+          width: 100%;
+          grid-column: span 2;
+        }
+      }
+
+      /* min-width: 1024px */
+      @media (min-width: 1024px) {
+        .container {
+          display: flex;
+          justify-content: space-between;
+          padding: 40px;
+        }
+        .profile-img {
+          flex: 1;
+          margin-right: 20px;
+        }
+        .intro-text {
+          flex: 2;
+        }
+        aside,
+        .Projects,
+        .contract {
+          margin: 20px;
+          padding: 20px;
+        }
+      }
+      @media (min-width: 768px) {
+        .bottom-section {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 20px;
+          padding: 20px;
+        }
+
+        .Projects {
+          flex: 1 1 60%;
+          order: 1;
+        }
+
+        .contract {
+          flex: 1 1 35%;
+          order: 0; /* Moves it above Projects visually */
+        }
+      }
+
+      /* orientation: landscape */
+      @media (orientation: landscape) {
+        body {
+          background-color: lightyellow;
+        }
+        aside,
+        .Projects,
+        .contract {
+          display: inline-block;
+          width: 30%;
+          vertical-align: top;
+        }
+      }
+
+      /* max-width: 1024px and orientation: portrait */
+      @media (max-width: 1024px) and (orientation: portrait) {
+        .profile-img {
+          display: none;
+        }
+        .intro-text {
+          width: 100%;
+        }
+      }
+
+      /* min-width: 768px and max-width: 1024px */
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .container {
+          grid-template-columns: 1fr 1fr;
+        }
+        .profile-img img {
+          width: 120px;
+          float: left;
+          margin-right: 10px;
+        }
+        .Skills {
+          background-color: #f0f8ff;
+        }
+      }
+
+      /* min-width: 1200px and orientation: landscape */
+      @media (min-width: 1200px) and (orientation: landscape) {
+        body {
+          max-width: 1140px;
+          margin: 0 auto;
+        }
+        .container,
+        aside,
+        .Projects,
+        .contract {
+          margin-bottom: 30px;
+        }
+        nav {
+          background-color: #000;
+          color: white;
+          padding: 10px;
+          text-align: center;
+        }
+      }
+
+      /* max-width: 600px and orientation: portrait */
+      @media (max-width: 600px) and (orientation: portrait) {
+        body {
+          font-size: 1.2em;
+          line-height: 1.8;
+        }
+        .container,
+        aside,
+        .Projects,
+        .contract {
+          width: 100%;
+          box-shadow: none;
+          border: none;
+          background: none;
+        }
+      }
+
+      /* min-width: 992px and max-width: 1199px */
+      @media (min-width: 992px) and (max-width: 1199px) {
+        .container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+        aside,
+        .Projects,
+        .contract {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>MyProfile</h1>
+    <div class="container">
+      <div class="profile-img">
+        <img
+          src="https://www.profilebakery.com/wp-content/uploads/2023/04/Profile-Image-AI.jpg"
+          alt="Profile Image"
+        />
+      </div>
+      <div class="intro-text">
+        <p>
+          📞 +123-456-7890 <br />📧Lorem@gmial.com<br />
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s.
+        </p>
+        <p>
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It
+          has roots in a piece of classical Latin literature from 45 BC, making
+          it over 2000 years old.
+        </p>
+      </div>
+    </div>
+
+    <aside>
+      <div class="Skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>JavaScript</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Java</li>
+        </ul>
+      </div>
+    </aside>
+
+    <div class="Projects">
+      <h2>Projects</h2>
+      <p>
+        Sr. C++ Developer/Embedded Engineer • Developed and maintained highly
+        responsive QML-based front-end interfaces for embedded medical devices,
+        improving UI responsiveness and device usability. • Built automated
+        cross-platform build systems using CMake to streamline complex build
+        configurations across Linux and QNX environments. • Containerized
+        development and testing environments using Docker, simplifying
+        dependency management and deployment processes. • Integrated project
+        workflows with real-time visibility across development and QA teams by
+        syncing multiple systems with Abbot. • Developed multi-threaded
+        applications and handled inter-process communication (IPC) for
+        performance-critical medical environments. • Enhanced DRM integrations
+        for secure content delivery using industry-standard technologies. •
+        Extensively worked with Linux system programming, socket communication,
+        low-level debugging, memory management, and real-time streaming
+        protocols. • Automated system deployment and debugging processes using
+        Shell scripting and Python scripting. • Environment: C++, QML, Docker,
+        CMake, Linux/QNX, Jenkins, JIRA, GIT, MPEG-DASH, HLS, Python, Device
+        Drivers, GTK, TCP/IP, DRM, Streaming Protocols
+      </p>
+    </div>
+
+    <div class="contract">
+      <h2>Contract</h2>
+      <ol>
+        <li>
+          <strong>Project Overview:</strong> The Developer agrees to design and
+          implement a fully responsive HTML Profile Page for the Client, using
+          modern web development practices. This profile page will include the
+          Client's name, image, biography, contact details, skills, and other
+          relevant personal/professional information.
+        </li>
+        <li>
+          <strong>Scope of Work:</strong> Create an HTML page titled
+          profile.html. Include: Profile picture (supplied by the Client). Name,
+          title, and short biography section. Contact information (email, phone,
+          social links). Skills and technology stack. Optional sections:
+          Projects, Certifications, Testimonials. Style the page using CSS
+          (inline or external stylesheet). Ensure mobile responsiveness using
+          Flexbox or CSS Grid. Optimize the layout for performance and
+          accessibility
+        </li>
+        <li>
+          <strong>Deliverables:</strong> `profile.html`, `style.css`, assets,
+          and preview ZIP.profile.html (HTML file) style.css (if using external
+          CSS) Any related images, icons, or assets Preview link or ZIP package
+          for review
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
