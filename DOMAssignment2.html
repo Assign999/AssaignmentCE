@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Example</title>
+    <style>
+      .colorBox {
+        display: inline-block;
+        width: 100px;
+        padding: 10px;
+        margin: 5px;
+        text-align: center;
+      }
+
+      /* Default style */
+      #focusInput {
+        padding: 8px;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        outline: none;
+      }
+
+      /* When focused */
+      #focusInput:focus {
+        border-color: #007bff; /* Blue border */
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      }
+      #dragTarget {
+        width: 100px;
+        padding: 10px;
+        background-color: #ffc107;
+        margin-bottom: 20px;
+        cursor: grab;
+      }
+
+      #dropArea {
+        width: 200px;
+        height: 100px;
+        border: 2px dashed #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: #555;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="main-title">Welcome!</h1>
+    <p class="desc">This is a description.</p>
+
+    <input type="text" id="nameInput" value="Student" />
+    <button id="changeBtn">Change Title</button>
+    <button id="updateBtn">Change Name</button>
+
+    <div class="colorBox">Red</div>
+    <div class="colorBox">Green</div>
+    <div class="colorBox">Blue</div>
+    <button id="styleBtn">Style Color Boxes</button>
+
+    <input type="text" id="focusInput" />
+    <button id="focusBtn">Focus Input</button>
+    <button id="clickMe" onclick="alert('Button Clicked')">Click Me</button>
+
+    <div id="dragTarget" draggable="true">Drag me</div>
+    <div id="dragTarget" draggable="true">Don't Drag me</div>
+    <div id="dropArea">Drop here</div>
+
+    <script>
+      function changetext() {
+        document.getElementById("main-title").innerText = "Hello DOM!";
+      }
+
+      function changeName() {
+        document.getElementById("nameInput").value = "Hrushikesh";
+      }
+      function styleColorBoxes() {
+        const colorBoxes = document.getElementsByClassName("colorBox");
+
+        for (let i = 0; i < colorBoxes.length; i++) {
+          const box = colorBoxes[i];
+          const colorName = box.textContent.trim().toLowerCase(); // red, green, blue
+          box.style.backgroundColor = colorName;
+          box.style.color = "#fff"; // for contrast
+        }
+
+        // Add border using querySelectorAll + forEach
+        document.querySelectorAll(".colorBox").forEach(function (box) {
+          box.style.border = "2px solid #333";
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("changeBtn")
+          .addEventListener("click", changetext);
+        document
+          .getElementById("updateBtn")
+          .addEventListener("click", changeName);
+        document
+          .getElementById("styleBtn")
+          .addEventListener("click", styleColorBoxes);
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("focusBtn")
+          .addEventListener("click", function () {
+            document.getElementById("focusInput").focus();
+          });
+      });
+      document
+        .getElementById("dragTarget")
+        .addEventListener("dragstart", function (event) {
+          event.dataTransfer.setData("text/plain", "dragTarget"); // optional
+        });
+
+      // Allow drop by preventing default
+      document
+        .getElementById("dropArea")
+        .addEventListener("dragover", function (event) {
+          event.preventDefault(); // This is required to allow dropping
+        });
+
+      // Handle drop
+      document
+        .getElementById("dropArea")
+        .addEventListener("drop", function (event) {
+          event.preventDefault();
+          document.getElementById("dropArea").innerText = "Dropped!";
+        });
+    </script>
+  </body>
+</html>
