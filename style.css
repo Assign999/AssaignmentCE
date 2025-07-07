@@ -1,0 +1,54 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f0f0;
+    padding:20px;
+    
+}
+
+.container{
+    display: flex;
+    gap: 20px;
+}
+
+form {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0  10px #ddd;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form button{
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding:10px;
+}
+
+.todo-container{
+    flex: 2;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0  10px #ddd;
+}
+
+table, th, td {
+border: 1px solid #CCC;
+}
+
+th {
+    padding: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
