@@ -29,6 +29,6 @@ export const ThemeProvider = ({ children }) => {
   );
 };
 
-// ✅ Disable warning just for this line
+
 // eslint-disable-next-line react-refresh/only-export-components
 export const useTheme = () => useContext(ThemeContext);

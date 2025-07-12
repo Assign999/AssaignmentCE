@@ -3,12 +3,12 @@ import { ThemeProvider } from './Contexts/ThemeContext';
 import { UserProvider } from './Contexts/UserContext';
 import Header from './components/Header';
 import MainContent from './components/MainContent';
-import Footer from './components/Footer';
+import Footer from './Components/Footer';
 
 const App = () => {
   return (
     <ThemeProvider>
-      
+
       <UserProvider>
         <div className="app-container">
           <Header />
