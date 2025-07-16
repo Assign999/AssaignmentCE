@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox</title>
+  </head>
+  <style>
+    body {
+      font-style: italic;
+      background-color: antiquewhite;
+      margin: 0;
+      padding: 40px;
+      border: 20px solid blue;
+    }
+    .Container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      flex: 1 1 250px;
+      max-width: 300px;
+      text-align: center;
+    }
+    .pro {
+      border: 2px solid gray;
+      transform: scale(1.05);
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .price {
+      font-size: 2em;
+      margin: 10px 0;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    @media (max-width: 800px) {
+      .pro {
+        order: -1;
+      }
+    }
+  </style>
+  <body>
+    <h1 style="text-align: center">flex-pricing</h1>
+    <div class="Container">
+      <div class="card">
+        <h2>Basic</h2>
+
+        <div class="price">$9</div>
+        <ul>
+          <li>Feature A</li>
+          <li>Feature B</li>
+          <li>Feature C</li>
+        </ul>
+        <button>Subscribe</button>
+      </div>
+      <div class="card pro">
+        <h2>Pro</h2>
+        <div class="Price">$29</div>
+        <ul>
+          <li>Basic feature</li>
+          <li>System Service</li>
+          <li>Settings</li>
+        </ul>
+        <button>Subscribe</button>
+      </div>
+      <div class="card">
+        <h2>Enterprise</h2>
+        <div class="price">$99</div>
+        <ul>
+          <li>Advance Features</li>
+          <li>Manager Service</li>
+          <li>Advance Settings</li>
+        </ul>
+        <button>Subscribe</button>
+      </div>
+    </div>
+  </body>
+</html>

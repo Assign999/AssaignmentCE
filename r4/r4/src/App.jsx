@@ -8,7 +8,7 @@ import Footer from './Components/Footer';
 const App = () => {
   return (
     <ThemeProvider>
-     
+
       <UserProvider>
         <div className="app-container">
           <Header />
