@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../features/cart/cartSlice';
+import ProductCard from './productCard'
 
 const products = [
   { id: 1, name: 'Shirt', price: 25 },
