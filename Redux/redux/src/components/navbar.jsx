@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const totalItems = useSelector(state => 
@@ -6,13 +7,12 @@ const Navbar = () => {
   );
 
   return (
-    <nav>
-      <h2>Shop</h2>
-      <div>
-        🛒 Cart ({totalItems})
-        <h1>Redux Shop</h1>
-      </div>
+
+      <nav style={{ padding: '2rem', background: '#f0f0f0' }}>
+      <Link to="/" style={{ marginRight: '1rem' }}>🏠 Home</Link>
+      <Link to="/cart">🛒 Cart ({totalItems})</Link>
     </nav>
+    
   );
 };
 export default  Navbar;
